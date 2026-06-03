@@ -165,6 +165,7 @@
                 <a href="#investigacao" class="hover:text-wine-500 transition-colors">Diretrizes</a>
                 <a href="#teoria" class="hover:text-wine-500 transition-colors">Teoria</a>
                 <a href="#metodologia" class="hover:text-wine-500 transition-colors">Metodologia</a>
+                <a href="#corpus" class="hover:text-wine-500 transition-colors">Corpus</a>
                 <a href="#cronograma" class="hover:text-wine-500 transition-colors">Cronograma</a>
                 <a href="#produtos" class="hover:text-wine-500 transition-colors">Produtos</a>
                 <a href="#producao" class="hover:text-wine-500 transition-colors">Produção</a>
@@ -180,6 +181,7 @@
             <a href="#investigacao" onclick="toggleMobileMenu()" class="block text-white hover:text-wine-500 font-medium">Diretrizes</a>
             <a href="#teoria" onclick="toggleMobileMenu()" class="block text-white hover:text-wine-500 font-medium">Teoria</a>
             <a href="#metodologia" onclick="toggleMobileMenu()" class="block text-white hover:text-wine-500 font-medium">Metodologia</a>
+            <a href="#corpus" onclick="toggleMobileMenu()" class="block text-white hover:text-wine-500 font-medium">Corpus</a>
             <a href="#cronograma" onclick="toggleMobileMenu()" class="block text-white hover:text-wine-500 font-medium">Cronograma</a>
             <a href="#produtos" onclick="toggleMobileMenu()" class="block text-white hover:text-wine-500 font-medium">Produtos</a>
             <a href="#producao" onclick="toggleMobileMenu()" class="block text-white hover:text-wine-500 font-medium">Produção</a>
@@ -529,7 +531,7 @@
                         </div>
                         <div class="flex-1">
                             <h4 class="text-lg font-bold text-white mb-1">Revisão Sistemática (PRISMA)</h4>
-                            <p class="text-sm text-blue-200 mb-3">Busca estruturada na Capes e SciELO. Triagem e aplicação de Matriz de Avaliação reduzindo de 1.094 registros para 36 artigos e teses essenciais.</p>
+                            <p class="text-sm text-blue-200 mb-3">Busca estruturada na Capes e SciELO. Triagem e aplicação de Matriz de Avaliação reduzindo de 1.094 registros para 36 artigos essenciais.</p>
                             <button onclick="openModal('modal-prisma')" class="text-xs font-semibold text-wine-400 hover:text-white transition-colors flex items-center gap-1 border border-wine-500/50 hover:bg-wine-600 px-3 py-1.5 rounded-full">
                                 <i class="fas fa-plus"></i> Ver Detalhamento
                             </button>
@@ -604,7 +606,7 @@
         </div>
 
         <div id="modal-prisma" class="fixed inset-0 bg-blue-900/90 backdrop-blur-sm z-[60] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
-            <div class="bg-white text-slate-800 rounded-2xl max-w-2xl w-full mx-4 p-8 relative shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content-prisma">
+            <div class="bg-white text-slate-800 rounded-2xl max-w-3xl w-full mx-4 p-8 relative shadow-2xl transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto chat-scroll" id="modal-content-prisma">
                 <button onclick="closeModal('modal-prisma')" class="absolute top-4 right-4 text-gray-400 hover:text-wine-700 text-xl"><i class="fas fa-times"></i></button>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-10 h-10 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-lg"><i class="fas fa-filter"></i></div>
@@ -670,6 +672,34 @@
         </div>
     </section>
 
+    <!-- NOVA SEÇÃO: ANÁLISE LEXICAL DO CORPUS -->
+    <section id="corpus" class="py-20 bg-white relative border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-wine-700 font-bold tracking-wider uppercase text-sm mb-2">Processamento de Linguagem Natural</h2>
+                <h3 class="text-3xl md:text-4xl font-serif text-blue-900">Análise Lexical do Corpus</h3>
+                <div class="w-24 h-1 bg-wine-700 mx-auto mt-4 rounded"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Exploração automatizada dos 36 artigos bibliográficos e documentais que compõem o corpus da pesquisa. Abaixo, o painel integrado do Voyant Tools permite a visualização de frequências, correlações, tendências gráficas e o contexto exato de cada termo na literatura analisada.</p>
+            </div>
+
+            <div class="w-full fade-in-up delay-100">
+                <!-- Voyant Tools - Dashboard Completo -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                    <h4 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2"><i class="fas fa-tachometer-alt text-wine-700"></i> Painel Interativo de Análise (Dashboard)</h4>
+                    <p class="text-sm text-gray-600 mb-4">Navegue livremente pelo quadro abaixo para acessar as ferramentas simultâneas: <em>Cirrus</em> (Nuvem de Palavras), <em>TermsBerry</em> (Correlações), <em>Trends</em> (Tendências Gráficas), <em>Summary</em> (Sumário Estatístico) e <em>Contexts</em> (Contextos de Uso).</p>
+                    <div class="w-full h-[800px] rounded-xl overflow-hidden border border-gray-300 bg-white shadow-inner flex-1">
+                        <iframe class="w-full h-full" src="https://voyant-tools.org/?stopList=keywords-0262c2db88be6b55a0ef0b86c790d779&amp;panels=cirrus%2Ctermsberry%2Ctrends%2Csummary%2Ccontexts&amp;corpus=8121760fbdca46be29e27ff7b8fdc54e" frameborder="0"></iframe>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <a href="https://voyant-tools.org/?stopList=keywords-0262c2db88be6b55a0ef0b86c790d779&amp;panels=cirrus%2Ctermsberry%2Ctrends%2Csummary%2Ccontexts&amp;corpus=8121760fbdca46be29e27ff7b8fdc54e" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-2.5 bg-white border-2 border-blue-900 text-blue-900 text-sm font-bold rounded-full hover:bg-blue-900 hover:text-white transition-colors shadow-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Abrir Painel Original em Nova Aba
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="cronograma" class="py-20 bg-gray-50 relative border-b border-gray-200">
         <div class="max-w-5xl mx-auto px-6 md:px-12">
             <div class="text-center mb-12 fade-in-up">
@@ -714,7 +744,7 @@
                             <div class="relative group inline-block">
                                 <h4 class="text-lg font-bold text-gray-800 cursor-help border-b-2 border-dashed border-gray-300 hover:border-rose-500 transition-colors">2. Revisão de literatura</h4>
                                 <div class="absolute z-50 bottom-full left-0 mb-2 w-80 p-3 bg-gray-900 text-white text-xs font-normal rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none">
-                                    O tempo para coleta foi mais longo do que o inicialmente planejado. Mas uma vez realizada, resta apenas a análise de 10 dos 36 dos textos selecionados.
+                                    O tempo para coleta foi mais longo do que o inicialmente planejado. Mas uma vez realizada, resta apenas a análise de 10 dos 36 textos selecionados.
                                     <div class="absolute -bottom-1 left-8 w-3 h-3 bg-gray-900 transform rotate-45"></div>
                                 </div>
                             </div>
